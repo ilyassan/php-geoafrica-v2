@@ -7,20 +7,20 @@
     require_once __DIR__ . '/../app/Core/BasePage.php';
     require_once __DIR__ . '/../app/Core/Database.php';
     require_once __DIR__ . '/../app/helpers/url_helper.php';
+
+    // Require the classes
+    require_once __DIR__ . '/../app/Classes/User.php';
     
     $router = new Router();
     $request = new Request();
-
 
     // countries routes 
     $router->add('GET', '/', 'CountriesPage@index');
     $router->add('GET', '/country/{id}', 'CountriesPage@details');
     $router->add('GET', '/addCountry', 'CountriesPage@create');
 
-
-
-    // authentication routes
     $router->add('GET', '/signup', 'SignupPage@index');
+    $router->add('POST', '/signup', 'SignupPage@register');
     $router->add('GET', '/login', 'LoginPage@index');
 
     $router->dispatch($request);
