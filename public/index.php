@@ -16,6 +16,9 @@
 
     // Require the classes
     require_once __DIR__ . '/../app/Classes/User.php';
+    require_once __DIR__ . '/../app/Classes/Country.php';
+    require_once __DIR__ . '/../app/Classes/City.php';
+    require_once __DIR__ . '/../app/Classes/Language.php';
     
     $router = new Router();
     $request = new Request();

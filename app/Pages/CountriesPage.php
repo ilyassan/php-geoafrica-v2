@@ -8,7 +8,23 @@ class CountriesPage extends BasePage
     }
     public function details($countryId)
     {
-        $this->render("country-details");
+
+        $country = Country::findWithLanguages($countryId);
+
+        $cities = City::findCitiesByCountryId($countryId);
+        $showedCities = [];
+        $unShowedCities = [];
+        foreach($cities as $city){
+            if ($city["is_showed"]) {
+                $showedCities[] = $city;
+            }else{
+                $unShowedCities[] = $city;
+            }
+        }
+
+        $languages = Language::all();
+        
+        $this->render("country-details", compact("country", "showedCities", "unShowedCities", "languages"));
     }
     public function create()
     {
