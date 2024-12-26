@@ -12,6 +12,7 @@
     $request = new Request();
 
     $router->add('GET', '/about', 'CountriesPage@about');
+    $router->add('GET', '/addCountry', 'CountriesPage@createCountry');
     $router->add('GET', '/signup', 'SignupPage@index');
     $router->add('GET', '/login', 'LoginPage@index');
 
