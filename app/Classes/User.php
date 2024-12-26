@@ -1,5 +1,5 @@
 <?php
-    class User {
+    class User extends BaseClass{
         private $id;
         private $name;
         private $email;
@@ -34,5 +34,22 @@
 
         public function update(){
             
+        }
+
+
+
+        public static function findUserByEmail($email){
+            $sql = "SELECT * FROM users WHERE email = :email";
+            self::$db->query($sql);
+            self::$db->bind(':email', $email);
+            self::$db->execute();
+            $result = self::$db->single();
+
+            if(self::$db->rowCount() > 0){
+                return true;
+            }else{
+                return false;
+            }
+
         }
     }

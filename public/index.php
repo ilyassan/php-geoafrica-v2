@@ -5,8 +5,12 @@
     require_once __DIR__ . '/../app/Core/Router.php';
     require_once __DIR__ . '/../app/Core/Request.php';
     require_once __DIR__ . '/../app/Core/BasePage.php';
+    require_once __DIR__ . '/../app/Core/BaseClass.php';
     require_once __DIR__ . '/../app/Core/Database.php';
     require_once __DIR__ . '/../app/helpers/url_helper.php';
+
+    $db = new Database();
+    BaseClass::setDatabase($db);
 
     // Require the classes
     require_once __DIR__ . '/../app/Classes/User.php';
