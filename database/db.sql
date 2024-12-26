@@ -1,13 +1,20 @@
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS cities;
+DROP TABLE IF EXISTS countries;
+DROP TABLE IF EXISTS languages;
+DROP TABLE IF EXISTS continents;
+DROP TABLE IF EXISTS roles;
+
 CREATE TABLE roles (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    name varchar(255) NOT NULL
+    name ENUM('visitor', 'admin') NOT NULL
 );
 
 CREATE TABLE users (
     id_user INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     username varchar(255),
     email varchar(255),
-    passwordHashed varchar(255),
+    password_hash varchar(255),
     role_id  INT ,  
     FOREIGN KEY (role_id) REFERENCES roles(id)
 );
@@ -51,6 +58,17 @@ CREATE TABLE cities (
     FOREIGN KEY (id_country) REFERENCES countries(id_country)
 );
 
+
+INSERT INTO roles (name) VALUES ('admin'),('visitor');
+
+INSERT INTO users (username, email, password_hash, role_id) 
+VALUES ('Ilyass Anida', 'ilyass@email.com', 'hashed_password_chef', 1);
+
+INSERT INTO users (username, email, password_hash, role_id) 
+VALUES 
+('Taha Mlaiki', 'taha@email.com', 'hashed_password1', 2),
+('Bob Johnson', 'bob.johnson@example.com', 'hashed_password2', 2),
+('Charlie Williams', 'charlie.williams@example.com', 'hashed_password3', 2);
 
 INSERT INTO continents (name) VALUES
 ('Africa');
