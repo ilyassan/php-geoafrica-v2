@@ -12,8 +12,16 @@ class Router
     public function dispatch($request)
     {
         foreach ($this->routes as $route) {
+            $isRouteAcceptParam = strpos($route['path'], "/{id}") != false;
+            $param = null;
+            if ($isRouteAcceptParam) {
+                $route['path'] = str_replace('/{id}', '', $route['path']);
+                $param = str_replace($route['path'], '', $request->getPath());
+            }
+
+            $requestPath = $param ? str_replace($param, '', $request->getPath()) : $request->getPath();
             if ($route['method'] === $request->getMethod() &&
-                $route['path'] === $request->getPath()) {
+                $route['path'] === $requestPath) {
                 
                 if (is_callable($route['callback'])) {
                     return call_user_func($route['callback']);
@@ -30,7 +38,7 @@ class Router
                         
                         // Instantiate the page and call the action
                         $pageInstance = new $page();
-                        return $pageInstance->$action();
+                        return $param != null ? $pageInstance->$action(str_replace("/", "", $param)) : $pageInstance->$action();
                     } else {
                         http_response_code(500);
                         echo "Page file not found: $pageFile";
