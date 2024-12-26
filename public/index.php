@@ -8,6 +8,8 @@
     require_once __DIR__ . '/../app/Core/BaseClass.php';
     require_once __DIR__ . '/../app/Core/Database.php';
     require_once __DIR__ . '/../app/helpers/url_helper.php';
+    require_once __DIR__ . '/../app/helpers/session_helper.php';
+    require_once __DIR__ . '/../app/helpers/custom_functions.php';
 
     $db = new Database();
     BaseClass::setDatabase($db);

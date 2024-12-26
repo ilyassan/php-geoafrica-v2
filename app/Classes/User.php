@@ -1,13 +1,16 @@
 <?php
     class User extends BaseClass{
         private $id;
-        private $name;
+        private $username;
         private $email;
         private $password;
+        private $role_id;
 
-        public function __construct($id, $name, $email, $password) {
-            $this->id = $id;
-            $this->name = $name;
+        static public $adminRoleId = 1;
+        static public $visitorRoleId = 2;
+
+        public function __construct($username, $email, $password) {
+            $this->username = $username;
             $this->email = $email;
             $this->password = $password;
         }
@@ -16,8 +19,8 @@
             return $this->id;
         }
 
-        public function getName() {
-            return $this->name;
+        public function getUsername() {
+            return $this->username;
         }
 
         public function getEmail() {
@@ -29,7 +32,18 @@
         }
 
         public function save(){
+            $sql = "INSERT INTO users (username, email, passwordHashed, role_id) VALUES (:username, :email, :passwordHashed, :role_id)";
+            self::$db->query($sql);
+            self::$db->bind(':username', $this->username);
+            self::$db->bind(':email', $this->email);
+            self::$db->bind(':passwordHashed', $this->password);
+            self::$db->bind(':role_id', self::$visitorRoleId);
 
+            if (self::$db->execute()) {
+                return true;
+            } else {
+                return false;
+            }
         }
 
         public function update(){
