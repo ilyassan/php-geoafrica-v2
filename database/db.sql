@@ -11,7 +11,7 @@ CREATE TABLE roles (
 );
 
 CREATE TABLE users (
-    id_user INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     username varchar(255),
     email varchar(255),
     password_hash varchar(255),
@@ -20,19 +20,19 @@ CREATE TABLE users (
 );
 
 CREATE TABLE continents (
-    id_continent INT AUTO_INCREMENT,
+    id INT AUTO_INCREMENT,
     name varchar(20),
     PRIMARY KEY (id_continent)
 );
 
 CREATE TABLE languages (
-    id_language INT AUTO_INCREMENT,
+    id INT AUTO_INCREMENT,
     name varchar(20),
     PRIMARY KEY (id_language)
 );
 
 CREATE TABLE countries (
-    id_country INT AUTO_INCREMENT,
+    id INT AUTO_INCREMENT,
     name VARCHAR(20),
     population INT,
     shortname VARCHAR(2),
@@ -49,7 +49,7 @@ CREATE TABLE countries (
 );
 
 CREATE TABLE cities (
-    id_city INT AUTO_INCREMENT,
+    id INT AUTO_INCREMENT,
     name varchar(20),
     is_capital BOOLEAN,
     is_showed BOOLEAN DEFAULT FALSE,
