@@ -2,11 +2,13 @@
 
 class Request
 {
+    // Get the request method
     public function getMethod()
     {
         return $_SERVER['REQUEST_METHOD'];
     }
 
+    // Get the request path
     public function getPath()
     {
         $path = $_SERVER['REQUEST_URI'] ?? '/';

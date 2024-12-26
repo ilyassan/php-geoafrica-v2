@@ -13,5 +13,4 @@
     // Define Routes
     $router->add('GET', '/about', 'CountriesPage@about');
 
-    // Dispatch the Request
     $router->dispatch($request);

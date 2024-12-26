@@ -20,20 +20,20 @@ class Router
                 }
                 
                 if (is_string($route['callback'])) {
-                    [$controller, $action] = explode('@', $route['callback']);
+                    [$page, $action] = explode('@', $route['callback']);
                     
-                    // Require the controller file
-                    $controllerFile = __DIR__ . '/../Pages/' . $controller . '.php';
+                    // Require the page file
+                    $pageFile = __DIR__ . '/../Pages/' . $page . '.php';
             
-                    if (file_exists($controllerFile)) {
-                        require_once $controllerFile;
+                    if (file_exists($pageFile)) {
+                        require_once $pageFile;
                         
-                        // Instantiate the controller and call the action
-                        $controllerInstance = new $controller();
-                        return $controllerInstance->$action();
+                        // Instantiate the page and call the action
+                        $pageInstance = new $page();
+                        return $pageInstance->$action();
                     } else {
                         http_response_code(500);
-                        echo "Controller file not found: $controllerFile";
+                        echo "Page file not found: $pageFile";
                         return;
                     }
                 }
