@@ -27,16 +27,12 @@
             return $this->email;
         }
 
-        public function getPassword() {
-            return $this->password;
-        }
-
         public function save(){
-            $sql = "INSERT INTO users (username, email, passwordHashed, role_id) VALUES (:username, :email, :passwordHashed, :role_id)";
+            $sql = "INSERT INTO users (username, email, password_hash, role_id) VALUES (:username, :email, :password_hash, :role_id)";
             self::$db->query($sql);
             self::$db->bind(':username', $this->username);
             self::$db->bind(':email', $this->email);
-            self::$db->bind(':passwordHashed', $this->password);
+            self::$db->bind(':password_hash', $this->password);
             self::$db->bind(':role_id', self::$visitorRoleId);
 
             if (self::$db->execute()) {
