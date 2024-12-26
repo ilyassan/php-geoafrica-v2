@@ -50,6 +50,28 @@ class SignupPage extends BasePage
         }elseif($data['password'] != $data['confirm_password']){
             $errors['confirm_password_err'] = 'Passwords do not match.';
         }
+
+        // Make sure errors are empty (There's no errors)
+        if(empty($errors['username_err']) && empty($errors['email_err']) && empty($errors['password_err']) && empty($errors['confirm_password_err'])){
+            // Hash Password
+            $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+
+            $user = new User($data['username'], $data['email'], $data['password']);
+
+            // Register user
+            if($user->save()){
+                // Register success
+                flash('success', 'You are registered and can log in.');
+                redirect('login');
+            }else{
+                die('Something went wrong');
+            }
+        }
+        else{
+            // Load view with errors
+            flash("error", array_first_not_null_value($errors));
+            redirect('signup');
+        }
         
     }
 }
