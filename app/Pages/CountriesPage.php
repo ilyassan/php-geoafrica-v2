@@ -6,4 +6,9 @@ class CountriesPage extends BasePage
     {
         $this->render("countries");
     }
-}
+
+    public function createCountry()
+    {
+        $this->render("addCountry");
+    }
+};
