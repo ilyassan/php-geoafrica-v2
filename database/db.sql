@@ -1,9 +1,16 @@
+CREATE TABLE roles (
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    name varchar(255) NOT NULL
+);
+
 CREATE TABLE users (
     id_user INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     username varchar(255),
     email varchar(255),
-    passwordHashed varchar(255)
-)
+    passwordHashed varchar(255),
+    role_id  INT ,  
+    FOREIGN KEY (role_id) REFERENCES roles(id)
+);
 
 CREATE TABLE continents (
     id_continent INT AUTO_INCREMENT,
