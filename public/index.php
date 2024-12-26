@@ -11,9 +11,15 @@
     $router = new Router();
     $request = new Request();
 
-    $router->add('GET', '/country/{id}', 'CountryDetails@index');
-    $router->add('GET', '/about', 'CountriesPage@about');
-    $router->add('GET', '/addCountry', 'CountriesPage@createCountry');
+
+    // countries routes 
+    $router->add('GET', '/', 'CountriesPage@index');
+    $router->add('GET', '/country/{id}', 'CountriesPage@details');
+    $router->add('GET', '/addCountry', 'CountriesPage@create');
+
+
+
+    // authentication routes
     $router->add('GET', '/signup', 'SignupPage@index');
     $router->add('GET', '/login', 'LoginPage@index');
 
