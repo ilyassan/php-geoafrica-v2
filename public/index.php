@@ -13,5 +13,6 @@
 
     $router->add('GET', '/about', 'CountriesPage@about');
     $router->add('GET', '/signup', 'SignupPage@index');
+    $router->add('GET', '/login', 'LoginPage@index');
 
     $router->dispatch($request);
