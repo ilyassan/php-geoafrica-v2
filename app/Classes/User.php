@@ -38,6 +38,16 @@ class User extends BaseClass
         return $this->password;
     }
 
+    public function isAdmin()
+    {
+        return $this->role_id == self::$adminRoleId;
+    }
+
+    public function isVisitor()
+    {
+        return $this->role_id == self::$visitorRoleId;
+    }
+
     public function save()
     {
         $sql = "INSERT INTO users (username, email, password_hash, role_id) VALUES (:username, :email, :password_hash, :role_id)";
@@ -54,8 +64,20 @@ class User extends BaseClass
         }
     }
 
-    public function update() {}
+    public static function find($id)
+    {
+        $sql = "SELECT * FROM users WHERE id = :id";
+        self::$db->query($sql);
+        self::$db->bind(':id', $id);
+        self::$db->execute();
+        $result = self::$db->single();
 
+        if (self::$db->rowCount() > 0) {
+            return new self($result->id, $result->username, $result->email, $result->password_hash, $result->role_id);
+        } else {
+            return false;
+        }
+    }
 
     public static function findUserByEmail($email)
     {
@@ -71,6 +93,7 @@ class User extends BaseClass
             return false;
         }
     }
+
     public function createSession()
     {
         $_SESSION['user_id'] = $this->id;

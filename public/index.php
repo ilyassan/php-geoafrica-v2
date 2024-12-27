@@ -11,6 +11,7 @@
     require_once __DIR__ . '/../app/helpers/session_helper.php';
     require_once __DIR__ . '/../app/helpers/custom_functions.php';
     require_once __DIR__ . '/../app/helpers/csrf_helper.php';
+    require_once __DIR__ . '/../app/helpers/user_helper.php';
 
     $db = new Database();
     BaseClass::setDatabase($db);

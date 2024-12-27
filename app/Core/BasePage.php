@@ -1,6 +1,14 @@
 <?php
     class BasePage
     {
+
+        public function __construct()
+        {
+            if(!isLoggedIn()){
+                redirect("login");
+            }
+        }
+
         function render($path, $data = []){
             if ($path == "/") {
                 $path = "/index";
