@@ -102,7 +102,6 @@
             self::$db->bind(':is_showed', $this->is_showed);
             return self::$db->execute();
         }
-
         public static function find(int $id) {
             $sql = "SELECT * FROM countries
                     WHERE id = :id";
