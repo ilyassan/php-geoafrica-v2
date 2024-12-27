@@ -12,7 +12,10 @@ class Router
     public function dispatch($request)
     {
         if ($request->getMethod() === 'POST') {
-            $csrfToken = $_POST['csrf_token'] ?? '';
+            $input = file_get_contents('php://input');
+            $data = json_decode($input, true);
+            $csrfToken = $_POST['csrf_token'] ?? $data['csrf_token'] ?? "";
+
             if (!validateCsrfToken($csrfToken)) {
                 redirect('');
             }
