@@ -168,3 +168,18 @@ INSERT INTO cities (name, is_capital, id_country) VALUES
 ('Musanze', 0, 14),
 ('Gisenyi', 0, 14);
 
+
+-- Update country data
+UPDATE countries
+SET countries.name = "Wakanda"
+WHERE countries.name = "Wakando";
+
+UPDATE countries
+SET countries.is_showed = 0
+WHERE countries.name in ("Morocco", "Nigeria", "Egypt", "Tanzania", "South Africa");
+
+-- Delete a country with its cities
+DELETE FROM cities
+WHERE cities.id = (SELECT id FROM countries WHERE countries.name = "Wakanda");
+DELETE FROM countries
+WHERE countries.name = "Wakanda"; 
