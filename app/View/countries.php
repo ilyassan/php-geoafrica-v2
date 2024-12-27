@@ -39,7 +39,7 @@ function countryCardHtml($id, $name, $imageUrl, $description, $languageId)
 
 <main class="flex py-10 justify-center bg-primary bg-opacity-50">
     <div class="max-w-2xl relative">
-        <img class="w-full" src="https://raw.githubusercontent.com/ilyassan/php-geoafrica/b4e931d241dc1b910c464b1b1aa7cf3959c1ead9/assets/images/africa%20(2).svg" alt="Africa Map">
+        <img class="w-full" src="<?= ASSETSROOT . "images/africa.png" ?>" alt="Africa Map">
         <div id="map-cities">
             <?php foreach ($countries as $country) {
                 echo countryMapHtmlElement($country->getId(), $country->getName(), $country->getShortname(), $country->getCordinates()[0], $country->getCordinates()[1]);
