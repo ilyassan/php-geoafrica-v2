@@ -1,3 +1,10 @@
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+
+>>>>>>> cd50958d676d9f6f396cf52f74880a3ed5bfc256
+=======
+>>>>>>> Stashed changes
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -665,11 +672,20 @@ video {
   margin-right: auto;
 }
 
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 .my-16 {
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> cd50958d676d9f6f396cf52f74880a3ed5bfc256
+=======
+>>>>>>> Stashed changes
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -694,10 +710,19 @@ video {
   margin-bottom: 1rem;
 }
 
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 .mb-5 {
   margin-bottom: 1.25rem;
 }
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> cd50958d676d9f6f396cf52f74880a3ed5bfc256
+=======
+>>>>>>> Stashed changes
 .mb-6 {
   margin-bottom: 1.5rem;
 }
@@ -754,15 +779,34 @@ video {
   height: 100%;
 }
 
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+.h-screen {
+  height: 100vh;
+}
+
+>>>>>>> cd50958d676d9f6f396cf52f74880a3ed5bfc256
+=======
+>>>>>>> Stashed changes
 .max-h-fit {
   max-height: -moz-fit-content;
   max-height: fit-content;
 }
 
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 .min-h-screen {
   min-height: 100vh;
 }
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> cd50958d676d9f6f396cf52f74880a3ed5bfc256
+=======
+>>>>>>> Stashed changes
 .w-0 {
   width: 0px;
 }
@@ -1067,6 +1111,22 @@ video {
   padding-right: 1rem;
 }
 
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+>>>>>>> cd50958d676d9f6f396cf52f74880a3ed5bfc256
+=======
+>>>>>>> Stashed changes
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -1082,6 +1142,22 @@ video {
   padding-bottom: 0.5rem;
 }
 
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+.py-2\.5 {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+>>>>>>> cd50958d676d9f6f396cf52f74880a3ed5bfc256
+=======
+>>>>>>> Stashed changes
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -1117,6 +1193,17 @@ video {
   line-height: 2.25rem;
 }
 
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+>>>>>>> cd50958d676d9f6f396cf52f74880a3ed5bfc256
+=======
+>>>>>>> Stashed changes
 .text-\[\.35rem\] {
   font-size: .35rem;
 }
@@ -1153,6 +1240,17 @@ video {
   font-weight: 500;
 }
 
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+.text-\[\#b25e39\] {
+  --tw-text-opacity: 1;
+  color: rgb(178 94 57 / var(--tw-text-opacity, 1));
+}
+
+>>>>>>> cd50958d676d9f6f396cf52f74880a3ed5bfc256
+=======
+>>>>>>> Stashed changes
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity, 1));
@@ -1367,6 +1465,10 @@ html::-webkit-scrollbar-thumb {
     gap: 3rem;
   }
 
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
   .lg\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -1375,6 +1477,14 @@ html::-webkit-scrollbar-thumb {
   .lg\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
+<<<<<<< Updated upstream
+=======
+  .lg\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+>>>>>>> cd50958d676d9f6f396cf52f74880a3ed5bfc256
+=======
+>>>>>>> Stashed changes
   }
 }
 

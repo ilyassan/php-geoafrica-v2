@@ -1,7 +1,7 @@
 <?php
     class BasePage
     {
-        function render($path){
+        function render($path, $data = []){
             if ($path == "/") {
                 $path = "/index";
             }
@@ -12,6 +12,7 @@
             $path = APPROOT . "View" . $path . ".php";
             
             if (file_exists($path)) {
+                extract($data);
                 require_once APPROOT . "View/components/header.php";
                 require_once $path;
                 require_once APPROOT . "View/components/footer.php";
