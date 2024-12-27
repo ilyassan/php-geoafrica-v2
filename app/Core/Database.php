@@ -2,16 +2,21 @@
 
 class Database
 {
-    private $host = 'localhost';
-    private $dbName = 'geoafrica-v2';
-    private $username = 'root';
-    private $password = '';
+    private $host;
+    private $dbName;
+    private $username;
+    private $password;
     private $pdo;
     private $stmt;
     private $error;
 
     public function __construct()
     {
+        $this->host = DB_HOST;
+        $this->dbName = DB_NAME;
+        $this->username = DB_USER;
+        $this->password = DB_PASS;
+
         // Try to connect to the database
         try {
             $dsn = "mysql:host={$this->host};dbname={$this->dbName}";
