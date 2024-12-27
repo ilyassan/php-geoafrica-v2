@@ -50,6 +50,20 @@
                 redirect("country/$countryId");
             }
         }
+
+        public function delete($countryId){
+            $countryId = htmlspecialchars($countryId);
+            $exist = Country::find($countryId);
+            if(!$exist){
+                flash("error","Country does not exist!");
+                redirect("");
+            }
+            $result = $exist->deleteById($countryId);
+            if($result){
+                flash("success","Country deleted successfully :)");
+                redirect("");
+            }
+        }
     
         public function addCityToCountry() {
             $input = file_get_contents('php://input');
