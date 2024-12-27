@@ -9,7 +9,7 @@ class SignupPage extends BasePage
 
     public function register()
     {
-        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_SPECIAL_CHARS);
 
         $data = [
             'username' => trim($_POST['username']),
