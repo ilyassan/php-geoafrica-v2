@@ -14,21 +14,23 @@
 
     <header class="flex justify-between container py-5">
         <a class="text-primary font-bold text-2xl" href="<?= URLROOT ?>">GEOAFRICA</a>
-        <?php
-            if (isLoggedIn() && user()->isAdmin()) {
-        ?>
-            <a href="<?= URLROOT . "country/create" ?>" class="bg-primary py-1 px-3 text-white rounded-lg flex gap-2 items-center"><i class="fa fa-plus"></i>Add Country</a>
-        <?php
-            }
-        ?>
-        <?php
-            if (isLoggedIn()) {
-        ?>
-            <form action="<?= URLROOT . 'logout' ?>" method="POST">
-                <input type="hidden" name="csrf_token" value="<?= generateCsrfToken() ?>">
-                <button class="bg-red-500 px-2 py-1 rounded-lg text-white">Logout <i class="fa-solid fa-right-from-bracket"></i></button>
-            </form>
-        <?php
-            }
-        ?>
+        <div class="flex gap-2">
+            <?php
+                if (isLoggedIn() && user()->isAdmin()) {
+            ?>
+                <a href="<?= URLROOT . "country/create" ?>" class="bg-primary py-1 px-3 text-white rounded-lg flex gap-2 items-center"><i class="fa fa-plus"></i>Add Country</a>
+            <?php
+                }
+            ?>
+            <?php
+                if (isLoggedIn()) {
+            ?>
+                <form action="<?= URLROOT . 'logout' ?>" method="POST">
+                    <input type="hidden" name="csrf_token" value="<?= generateCsrfToken() ?>">
+                    <button class="bg-red-500 px-2 py-1 rounded-lg text-white"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                </form>
+            <?php
+                }
+            ?>
+        </div>
     </header>
