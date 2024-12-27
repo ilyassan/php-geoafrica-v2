@@ -4,6 +4,7 @@ class CountriesPage extends BasePage
 {
     public function index()
     {
-        $this->render("countries");
+        $countries = Country::allShowed();
+        $this->render("countries", compact("countries"));
     }
 };

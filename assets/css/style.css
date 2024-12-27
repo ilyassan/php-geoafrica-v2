@@ -1,10 +1,3 @@
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-
->>>>>>> cd50958d676d9f6f396cf52f74880a3ed5bfc256
-=======
->>>>>>> Stashed changes
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -619,10 +612,6 @@ video {
   left: 50%;
 }
 
-.left-\[14\%\] {
-  left: 14%;
-}
-
 .right-0 {
   right: 0px;
 }
@@ -651,12 +640,12 @@ video {
   top: 110%;
 }
 
-.top-\[6\%\] {
-  top: 6%;
-}
-
 .top-\[98\%\] {
   top: 98%;
+}
+
+.-z-10 {
+  z-index: -10;
 }
 
 .z-10 {
@@ -672,20 +661,11 @@ video {
   margin-right: auto;
 }
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
 .my-16 {
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
 
-<<<<<<< Updated upstream
-=======
->>>>>>> cd50958d676d9f6f396cf52f74880a3ed5bfc256
-=======
->>>>>>> Stashed changes
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -710,21 +690,8 @@ video {
   margin-bottom: 1rem;
 }
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
 .mb-5 {
   margin-bottom: 1.25rem;
-}
-
-<<<<<<< Updated upstream
-=======
->>>>>>> cd50958d676d9f6f396cf52f74880a3ed5bfc256
-=======
->>>>>>> Stashed changes
-.mb-6 {
-  margin-bottom: 1.5rem;
 }
 
 .mb-8 {
@@ -741,10 +708,6 @@ video {
 
 .mt-6 {
   margin-top: 1.5rem;
-}
-
-.mt-7 {
-  margin-top: 1.75rem;
 }
 
 .mt-8 {
@@ -771,6 +734,10 @@ video {
   height: 0px;
 }
 
+.h-56 {
+  height: 14rem;
+}
+
 .h-\[1px\] {
   height: 1px;
 }
@@ -779,34 +746,23 @@ video {
   height: 100%;
 }
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-.h-screen {
-  height: 100vh;
-}
-
->>>>>>> cd50958d676d9f6f396cf52f74880a3ed5bfc256
-=======
->>>>>>> Stashed changes
 .max-h-fit {
   max-height: -moz-fit-content;
   max-height: fit-content;
 }
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
+.min-h-7 {
+  min-height: 1.75rem;
+}
+
+.min-h-full {
+  min-height: 100%;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
 
-<<<<<<< Updated upstream
-=======
->>>>>>> cd50958d676d9f6f396cf52f74880a3ed5bfc256
-=======
->>>>>>> Stashed changes
 .w-0 {
   width: 0px;
 }
@@ -824,12 +780,12 @@ video {
   width: 100%;
 }
 
-.max-w-2xl {
-  max-width: 42rem;
+.max-w-10 {
+  max-width: 2.5rem;
 }
 
-.max-w-8 {
-  max-width: 2rem;
+.max-w-2xl {
+  max-width: 42rem;
 }
 
 .max-w-96 {
@@ -884,10 +840,6 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.grid-cols-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -975,12 +927,13 @@ video {
   border-radius: 0.75rem;
 }
 
-.border {
-  border-width: 1px;
+.rounded-b-sm {
+  border-bottom-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
 }
 
-.border-2 {
-  border-width: 2px;
+.border {
+  border-width: 1px;
 }
 
 .border-4 {
@@ -1043,11 +996,6 @@ video {
   background-color: rgb(238 238 238 / var(--tw-bg-opacity, 1));
 }
 
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
-}
-
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
@@ -1067,16 +1015,16 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
-.bg-opacity-0 {
-  --tw-bg-opacity: 0;
-}
-
 .bg-opacity-45 {
   --tw-bg-opacity: 0.45;
 }
 
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
+}
+
+.p-0\.5 {
+  padding: 0.125rem;
 }
 
 .p-2 {
@@ -1111,22 +1059,6 @@ video {
   padding-right: 1rem;
 }
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
->>>>>>> cd50958d676d9f6f396cf52f74880a3ed5bfc256
-=======
->>>>>>> Stashed changes
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -1142,25 +1074,18 @@ video {
   padding-bottom: 0.5rem;
 }
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-.py-2\.5 {
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
-}
-
-.py-20 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
->>>>>>> cd50958d676d9f6f396cf52f74880a3ed5bfc256
-=======
->>>>>>> Stashed changes
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.pb-0\.5 {
+  padding-bottom: 0.125rem;
 }
 
 .pb-12 {
@@ -1193,17 +1118,6 @@ video {
   line-height: 2.25rem;
 }
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
->>>>>>> cd50958d676d9f6f396cf52f74880a3ed5bfc256
-=======
->>>>>>> Stashed changes
 .text-\[\.35rem\] {
   font-size: .35rem;
 }
@@ -1240,17 +1154,6 @@ video {
   font-weight: 500;
 }
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-.text-\[\#b25e39\] {
-  --tw-text-opacity: 1;
-  color: rgb(178 94 57 / var(--tw-text-opacity, 1));
-}
-
->>>>>>> cd50958d676d9f6f396cf52f74880a3ed5bfc256
-=======
->>>>>>> Stashed changes
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity, 1));
@@ -1405,14 +1308,23 @@ html::-webkit-scrollbar-thumb {
   right: 100%;
 }
 
-.group:hover .group-hover\:scale-\[2\.5\] {
-  --tw-scale-x: 2.5;
-  --tw-scale-y: 2.5;
+.group:hover .group-hover\:top-\[98\%\] {
+  top: 98%;
+}
+
+.group:hover .group-hover\:z-30 {
+  z-index: 30;
+}
+
+.group:hover .group-hover\:scale-\[2\.75\] {
+  --tw-scale-x: 2.75;
+  --tw-scale-y: 2.75;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.group:hover .group-hover\:bg-opacity-30 {
-  --tw-bg-opacity: 0.3;
+.group:hover .group-hover\:rounded-b-none {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
 .group:hover .group-hover\:opacity-100 {
@@ -1433,6 +1345,10 @@ html::-webkit-scrollbar-thumb {
     max-width: 28rem;
   }
 
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .sm\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1447,6 +1363,10 @@ html::-webkit-scrollbar-thumb {
 }
 
 @media (min-width: 768px) {
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
@@ -1465,26 +1385,14 @@ html::-webkit-scrollbar-thumb {
     gap: 3rem;
   }
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
   .lg\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
   }
 
-  .lg\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-<<<<<<< Updated upstream
-=======
-  .lg\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
->>>>>>> cd50958d676d9f6f396cf52f74880a3ed5bfc256
-=======
->>>>>>> Stashed changes
+  .lg\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 
