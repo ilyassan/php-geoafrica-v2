@@ -34,7 +34,7 @@
                     <div class="md:justify-end">
                         <div class="flex w-fit flex-1 items-start gap-3">
                             <button type="submit" formaction="<?= URLROOT . 'country/' . $country->getId() ?>" class="bg-primary px-2 py-1 rounded-lg text-white">Save <i class="fa-solid fa-pen-to-square"></i></button>
-                            <button type="submit" formaction="<?= URLROOT . 'delete-country/' . $country->getId() ?>" class="bg-primary px-2 py-1 rounded-lg text-white">Delete <i class="fa-solid fa-delete-left"></i></button>
+                            <button type="submit" formaction="<?= URLROOT . 'country/delete/' . $country->getId() ?>" class="bg-primary px-2 py-1 rounded-lg text-white">Delete <i class="fa-solid fa-delete-left"></i></button>
                         </div>
                     </div>   
                 <?php

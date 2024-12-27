@@ -33,6 +33,7 @@ class NewCountryPage extends BasePage
             "languageId" => filter_input(INPUT_POST, 'id_language', FILTER_SANITIZE_NUMBER_INT),
             "citiesIds" => array_map('intval', json_decode($_POST['ids_cities'], true))
         ];
+        print_r($data);
 
         $errors = [
             "continentId_err" => "",
@@ -63,7 +64,8 @@ class NewCountryPage extends BasePage
             $country->setLanguageId($data['languageId']);
             $country->setIsShowed(1);
 
-            if ($country->update() && City::showCities($data['citiesIds'])) {
+            if ($country->update()) {
+                !empty($data['citiesIds']) && City::showCities($data['citiesIds']);
                 flash("success", "Country created successfully.");
                 redirect("");
             }else{

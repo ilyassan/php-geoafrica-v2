@@ -24,11 +24,24 @@
             }
         }
 
-        public static function unattachCityToCountry($cityId){
+        public static function unattachCityFromCountry($cityId){
             $sql = "UPDATE cities SET cities.is_showed = 0
                     WHERE cities.id = :id_city";
             self::$db->query($sql);
             self::$db->bind(":id_city", $cityId);
+
+            if (self::$db->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        public static function unattachCitiesFromCountry($countryId){
+            $sql = "UPDATE cities SET cities.is_showed = 0
+                    WHERE cities.id_country = :id_country";
+            self::$db->query($sql);
+            self::$db->bind(":id_country", $countryId);
 
             if (self::$db->execute()) {
                 return true;
