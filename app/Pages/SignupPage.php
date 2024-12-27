@@ -56,7 +56,7 @@ class SignupPage extends BasePage
             // Hash Password
             $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
-            $user = new User($data['username'], $data['email'], $data['password']);
+            $user = new User(null, $data['username'], $data['email'], $data['password'],User::$visitorRoleId);
 
             // Register user
             if($user->save()){
