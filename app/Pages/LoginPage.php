@@ -24,9 +24,6 @@ class LoginPage extends BasePage
             'email' => trim($_POST['email']),
             'password' => trim($_POST['password']),
         ];
-        echo $data["email"];
-        echo $data["password"];
-
         $errors = [
             'email_err' => '',
             'password_err' => '',

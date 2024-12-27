@@ -27,9 +27,12 @@
             if (user()->isVisitor()) {
                 redirect("");
             }
-         
-            $population = trim($_POST["population"]) ;
-            $language_id = trim($_POST["id_language"]) ;
+          
+            $population = filter_input(INPUT_POST,"population",FILTER_SANITIZE_SPECIAL_CHARS);
+            $language_id = filter_input(INPUT_POST,"id_language",FILTER_SANITIZE_NUMBER_INT);
+
+            $population = trim($population);
+            $language_id = trim($language_id);
 
             if(empty($population) || empty($language_id)){
                 flash("error","All field are required");
