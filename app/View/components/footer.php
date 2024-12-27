@@ -1,5 +1,16 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+    let loading = document.getElementById("loading");
+
+    setTimeout(() => {
+        loading.classList.add("opacity-0");    
+        loading.classList.remove("opacity-100");
+        setTimeout(() => {
+            document.body.classList.remove("overflow-hidden");
+            loading.style.display = "none";
+        }, 500);
+    }, 300);
+
     let successMessage = <?= json_encode(flash("success")); ?>;
     if (successMessage) {
         Swal.fire("Success", successMessage, "success");
