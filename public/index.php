@@ -25,8 +25,11 @@
 
     // countries routes 
     $router->add('GET', '/', 'CountriesPage@index');
-    $router->add('GET', '/country/{id}', 'CountriesPage@details');
-    $router->add('GET', '/addCountry', 'CountriesPage@create');
+    $router->add('GET', '/country/{id}', 'CountryDetailsPage@index');
+    $router->add('GET', '/country/create', 'NewCountryPage@index');
+
+    $router->add('POST', '/api/country/add-city', 'CountryDetailsPage@addCityToCountry');
+    $router->add('POST', '/api/country/remove-city', 'CountryDetailsPage@removeCityFromCountry');
 
     $router->add('GET', '/signup', 'SignupPage@index');
     $router->add('POST', '/signup', 'SignupPage@register');

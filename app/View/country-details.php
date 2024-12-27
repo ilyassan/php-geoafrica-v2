@@ -124,7 +124,7 @@
 
             for (let city of array) {
                 let style = city == lastCity ? "": "border-b";
-                citiesOptionsContainer.innerHTML += `<span data-id='${city["id_city"]}' class='cursor-pointer hover:bg-slate-200 px-2 py-1 ${style} border-b-black'>${city["name"]}</span>`;
+                citiesOptionsContainer.innerHTML += `<span data-id='${city["id"]}' class='cursor-pointer hover:bg-slate-200 px-2 py-1 ${style} border-b-black'>${city["name"]}</span>`;
             }
         } else {
             citiesOptionsContainer.innerHTML = "<span class='px-2 py-1 text-gray-500'>No cities available</span>";
@@ -197,29 +197,32 @@
         cityInput.removeAttribute("data-id");
         cityInput.value = "";
 
-        let cityIndex = unShowedCities.findIndex(city => city["id_city"] == cityId);
+        let cityIndex = unShowedCities.findIndex(city => city["id"] == cityId);
 
         let city = unShowedCities.splice(cityIndex, 1)[0];
         showedCities.push(city);
         showData();
 
-        await fetch("./api/addCity.php", {
+        const res = await fetch("<?= URLROOT . 'api/country/add-city'?>", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({ id: cityId })
                 });
+
+        const data = await res.json();
+        console.log(data);
     }
 
     async function removeCity(id){
-        let cityIndex = showedCities.findIndex(city => city["id_city"] == id);
+        let cityIndex = showedCities.findIndex(city => city["id"] == id);
 
         let city = showedCities.splice(cityIndex, 1)[0];
         unShowedCities.push(city);
         showData();
 
-        await fetch("./api/removeCity.php", {
+        await fetch("<?= URLROOT . 'api/country/remove-city'?>", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
