@@ -54,8 +54,8 @@ class NewCountryPage extends BasePage
             }
             $country->setLanguageId($data['languageId']);
             $country->setIsShowed(1);
-    
-            if ($country->update()) {
+
+            if ($country->update() && City::showCities($data['citiesIds'])) {
                 flash("success", "Country created successfully.");
                 redirect("");
             }else{

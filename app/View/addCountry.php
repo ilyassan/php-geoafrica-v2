@@ -163,7 +163,7 @@
                 }
             });
 
-            document.getElementById("ids_cities").value = JSON.stringify(selectedCities.map(city => city["id_city"]));
+            document.getElementById("ids_cities").value = JSON.stringify(selectedCities.map(city => city["id"]));
         }
 
         const continentInput = document.getElementById("continent");
