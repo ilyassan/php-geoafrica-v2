@@ -102,15 +102,6 @@
             self::$db->bind(':is_showed', $this->is_showed);
             return self::$db->execute();
         }
-        public function deleteById($countryId) {
-            $sql = "UPDATE  countries
-            SET is_showed = false
-             WHERE id = :id";
-            self::$db->query($sql);
-            self::$db->bind(':id', $countryId);
-            return self::$db->execute();
-        }
-
         public static function find(int $id) {
             $sql = "SELECT * FROM countries
                     WHERE id = :id";
