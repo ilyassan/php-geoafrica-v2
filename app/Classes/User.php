@@ -57,7 +57,6 @@ class User extends BaseClass
     public function update() {}
 
 
-
     public static function findUserByEmail($email)
     {
         $sql = "SELECT * FROM users WHERE email = :email";

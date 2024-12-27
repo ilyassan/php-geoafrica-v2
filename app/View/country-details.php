@@ -7,7 +7,7 @@
                 <img src="<?= $country->getImageUrl() ?>" alt="<?= $country->getName() ?>">
             </div>
     
-            <form class="flex w-full flex-wrap flex-col gap-4 md:flex-row flex-1 justify-between" method="POST">
+            <form  class="flex w-full flex-wrap flex-col gap-4 md:flex-row flex-1 justify-between" method="POST">
                 <div class="flex flex-col gap-3">
                     <div class="flex flex-col gap-1.5">
                         <label class="text-xl" for="country">Country:</label>
@@ -21,7 +21,7 @@
                     <div class="relative flex flex-col gap-1.5">
                         <label class="text-xl" for="population">Language:</label>
                         <input autocomplete="off"  data-id="<?= $country->language()->getId() ?>" class="text-xl bg-[#eee] outline-none px-3 py-1 rounded-lg" type="text" value="<?= $country->language()->getName() ?>" name="language" id="language">
-                        <input id="id_language" class="hidden" type="text" value="<?= $country->language()->getName() ?>" name="id_language">
+                        <input id="id_language" class="hidden" type="text" value="<?= $country->language()->getId() ?>" name="id_language">
                         <div id="languages" class="flex hidden overflow-hidden absolute top-[110%] z-10 bg-[#eee] rounded-lg w-full flex-col">
                         </div>
                     </div>
@@ -29,7 +29,7 @@
 
                 <div class="md:justify-end">
                     <div class="flex w-fit flex-1 items-start gap-3">
-                        <button type="submit" formaction="./controllers/country/updateCountry.php" class="bg-primary px-2 py-1 rounded-lg text-white">Save <i class="fa-solid fa-pen-to-square"></i></button>
+                        <button type="submit" formaction="<?= URLROOT . 'country/' . $country->getId() ?>" class="bg-primary px-2 py-1 rounded-lg text-white">Save <i class="fa-solid fa-pen-to-square"></i></button>
                         <button type="submit" formaction="./controllers/country/deleteCountry.php" class="bg-primary px-2 py-1 rounded-lg text-white">Delete <i class="fa-solid fa-delete-left"></i></button>
                     </div>
                 </div>
@@ -152,7 +152,7 @@
         if (array.length != 0) {
             for (let language of array) {
                 let style = language == lastLanguage ? "": "border-b";
-                languagesContainer.innerHTML += `<span data-id='${language["id_language"]}' class='cursor-pointer hover:bg-slate-200 px-2 py-1 ${style} border-b-black'>${language["name"]}</span>`;
+                languagesContainer.innerHTML += `<span data-id='${language["id"]}' class='cursor-pointer hover:bg-slate-200 px-2 py-1 ${style} border-b-black'>${language["name"]}</span>`;
             }
         }else{
             languagesContainer.innerHTML = "<span class='px-2 py-1 text-gray-500'>No languages available</span>";

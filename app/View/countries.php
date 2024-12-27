@@ -19,7 +19,7 @@ function countryMapHtmlElement($id, $country, $countryShortName, $x, $y)
 
 function countryCardHtml($id, $name, $imageUrl, $description, $languageId)
 {
-    $path =  URLROOT ."country". $id; 
+    $path =  URLROOT ."country/". $id; 
     return "
     <a data-language='$languageId' href=$path  class='h-56 cursor-pointer group relative rounded-lg overflow-hidden'>
         <img class='min-h-full' src='$imageUrl' alt='$name'>

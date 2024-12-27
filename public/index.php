@@ -29,6 +29,8 @@
     $router->add('GET', '/country/create', 'NewCountryPage@index');
     $router->add('POST', '/country/create', 'NewCountryPage@create');
     $router->add('GET', '/country/{id}', 'CountryDetailsPage@index');
+    $router->add('POST', '/country/{id}', 'CountryDetailsPage@update');
+    $router->add('GET', '/country/create', 'NewCountryPage@index');
 
     $router->add('POST', '/api/country/add-city', 'CountryDetailsPage@addCityToCountry');
     $router->add('POST', '/api/country/remove-city', 'CountryDetailsPage@removeCityFromCountry');
