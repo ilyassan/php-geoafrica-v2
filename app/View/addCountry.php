@@ -6,6 +6,7 @@
                 <img class="scale-105" src="<?= ASSETSROOT . "images/world.jpg" ?>" alt="Map">
             </div>
             <form action="<?= URLROOT . "country/create" ?>" method="POST" class="flex flex-1 flex-col gap-3">
+                <input type="hidden" name="csrf_token" value="<?= generateCsrfToken() ?>">
                 <div class="flex gap-x-2 flex-col md:flex-row justify-between">
                     <div class="relative flex-1">
                         <div class="flex flex-col gap-2">

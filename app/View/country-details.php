@@ -7,7 +7,8 @@
                 <img src="<?= $country->getImageUrl() ?>" alt="<?= $country->getName() ?>">
             </div>
     
-            <form  class="flex w-full flex-wrap flex-col gap-4 md:flex-row flex-1 justify-between" method="POST">
+            <form class="flex w-full flex-wrap flex-col gap-4 md:flex-row flex-1 justify-between" method="POST">
+                <input type="hidden" name="csrf_token" value="<?= generateCsrfToken() ?>">
                 <div class="flex flex-col gap-3">
                     <div class="flex flex-col gap-1.5">
                         <label class="text-xl" for="country">Country:</label>
