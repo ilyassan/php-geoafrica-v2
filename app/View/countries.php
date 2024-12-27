@@ -63,7 +63,13 @@ function countryCardHtml($id, $name, $imageUrl, $description, $languageId)
         } ?>
     </div>
 
-    <a href="<?= URLROOT . "country/create" ?>" class="mx-auto w-fit bg-primary mt-8 py-1 px-3 text-white rounded-lg flex gap-2 items-center"><i class="fa fa-plus"></i>Add Country</a>
+    <?php
+        if (user()->isAdmin()) {
+    ?>
+        <a href="<?= URLROOT . "country/create" ?>" class="mx-auto w-fit bg-primary mt-8 py-1 px-3 text-white rounded-lg flex gap-2 items-center"><i class="fa fa-plus"></i>Add Country</a>
+    <?php
+        }
+    ?>
 </div>
 
 <script>

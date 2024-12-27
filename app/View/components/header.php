@@ -14,5 +14,11 @@
 
     <header class="flex justify-between container py-5">
         <a class="text-primary font-bold text-2xl" href="<?= URLROOT ?>">GEOAFRICA</a>
-        <a href="<?= URLROOT . "country/create" ?>" class="bg-primary py-1 px-3 text-white rounded-lg flex gap-2 items-center"><i class="fa fa-plus"></i>Add Country</a>
+        <?php
+            if (isLoggedIn() && user()->isAdmin()) {
+        ?>
+            <a href="<?= URLROOT . "country/create" ?>" class="bg-primary py-1 px-3 text-white rounded-lg flex gap-2 items-center"><i class="fa fa-plus"></i>Add Country</a>
+        <?php
+            }
+        ?>
     </header>

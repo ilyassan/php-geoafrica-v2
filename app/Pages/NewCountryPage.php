@@ -4,6 +4,10 @@ class NewCountryPage extends BasePage
 {
     public function index()
     {
+        if (user()->isVisitor()) {
+            redirect("");
+        }
+
         $continents = Continent::all();
         $unShowedCountries = Country::allUnshowed();
         $languages = Language::all();
@@ -16,7 +20,11 @@ class NewCountryPage extends BasePage
         echo json_encode($countryCities);
     }
 
-    public function create() {
+    public function create()
+    {
+        if (user()->isVisitor()) {
+            redirect("");
+        }
 
         $data = [
             "continentId" => filter_input(INPUT_POST, 'id_continent', FILTER_SANITIZE_NUMBER_INT),

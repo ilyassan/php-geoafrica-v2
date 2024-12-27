@@ -21,7 +21,12 @@
             
             $this->render("country-details", compact("country", "showedCities", "unShowedCities", "languages"));
         }
+
         public function update($countryId){
+
+            if (user()->isVisitor()) {
+                redirect("");
+            }
          
             $population = trim($_POST["population"]) ;
             $language_id = trim($_POST["id_language"]) ;
