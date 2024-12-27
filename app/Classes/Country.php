@@ -94,7 +94,7 @@
             $sql = "UPDATE countries
                     SET population = :population, id_language = :id_language, is_showed = :is_showed
                     WHERE id = :id";
-
+                    
             self::$db->query($sql);
             self::$db->bind(':id', $this->id);
             self::$db->bind(':population', $this->population);

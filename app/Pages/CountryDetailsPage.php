@@ -21,6 +21,27 @@
             
             $this->render("country-details", compact("country", "showedCities", "unShowedCities", "languages"));
         }
+        public function update($countryId){
+         
+            $population = trim($_POST["population"]) ;
+            $language_id = trim($_POST["id_language"]) ;
+
+            if(empty($population) || empty($language_id)){
+                flash("error","All field are required");
+                redirect("country/$countryId");
+            }
+            $country = Country::find($countryId);
+            if(!$country){
+                flash("error","No Country found with this id");
+                redirect("");
+            }
+            $country->setPopulation($population);
+            $country->setLanguageId($language_id);
+            if($country->update()){
+                flash("success","Country updated successfully");
+                redirect("country/$countryId");
+            }
+        }
     
         public function addCityToCountry() {
             $input = file_get_contents('php://input');
