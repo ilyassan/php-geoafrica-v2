@@ -1,8 +1,9 @@
 <?php
 function countryMapHtmlElement($id, $country, $countryShortName, $x, $y)
 {
+    $path =  URLROOT ."country/". $id; 
     return "
-    <a href='./details.php?id=$id' class='absolute cursor-pointer group' style='left: $x%; top: $y%;'>
+    <a href='$path' class='absolute cursor-pointer group' style='left: $x%; top: $y%;'>
         <div class='relative p-0.5 bg-primary rounded-sm z-20 group-hover:scale-[2.75] group-hover:rounded-b-none group-hover:z-30 duration-500 transition-all'>
             <div class='flag max-w-10'>
                 <img class='w-full min-h-7' src='https://flagcdn.com/w320/$countryShortName.png' alt='$country'>
@@ -19,7 +20,7 @@ function countryMapHtmlElement($id, $country, $countryShortName, $x, $y)
 
 function countryCardHtml($id, $name, $imageUrl, $description, $languageId)
 {
-    $path =  URLROOT ."country". $id; 
+    $path =  URLROOT ."country/". $id; 
     return "
     <a data-language='$languageId' href=$path  class='h-56 cursor-pointer group relative rounded-lg overflow-hidden'>
         <img class='min-h-full' src='$imageUrl' alt='$name'>
@@ -62,7 +63,7 @@ function countryCardHtml($id, $name, $imageUrl, $description, $languageId)
         } ?>
     </div>
 
-    <a href="./addCountry.php" class="mx-auto w-fit bg-primary mt-8 py-1 px-3 text-white rounded-lg flex gap-2 items-center"><i class="fa fa-plus"></i>Add Country</a>
+    <a href="<?= URLROOT . "country/create" ?>" class="mx-auto w-fit bg-primary mt-8 py-1 px-3 text-white rounded-lg flex gap-2 items-center"><i class="fa fa-plus"></i>Add Country</a>
 </div>
 
 <script>
@@ -75,7 +76,7 @@ function countryCardHtml($id, $name, $imageUrl, $description, $languageId)
 
     const citiesContainer = document.getElementById("cities-cards");
     const languages = <?= json_encode($languages) ?>
-
+    
     const languageInput = document.getElementById("language");
     const languagesContainer = document.getElementById("languages");
 
@@ -104,7 +105,7 @@ function countryCardHtml($id, $name, $imageUrl, $description, $languageId)
         if (array != 0) {
             for (let language of array) {
                 let style = language == lastLanguage ? "" : "border-b";
-                languagesContainer.innerHTML += `<span data-id='${language['id_language']}' class='cursor-pointer hover:bg-slate-200 px-2 py-1 ${style} border-b-black'>${language['name']}</span>`;
+                languagesContainer.innerHTML += `<span data-id='${language['id']}' class='cursor-pointer hover:bg-slate-200 px-2 py-1 ${style} border-b-black'>${language['name']}</span>`;
             }
         } else {
             languagesContainer.innerHTML = "<span class='px-2 py-1 text-gray-500'>No languages available</span>";
