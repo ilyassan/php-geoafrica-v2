@@ -61,7 +61,7 @@ class CountryDetailsPage extends BasePage
             redirect("");
         }
         $country->setIsShowed(0);
-        if ($country->update()) {
+        if ($country->update() && City::unattachCitiesFromCountry($countryId)) {
             flash("success", "Country delete successfully!");
             redirect("");
         }
@@ -88,7 +88,7 @@ class CountryDetailsPage extends BasePage
 
         $cityId = intval($data["id"]);
 
-        if (City::unattachCityToCountry($cityId)) {
+        if (City::unattachCityFromCountry($cityId)) {
             echo json_encode(["success" => true, "id_received" => $cityId]);
         } else {
             echo json_encode(["error" => true, "id_received" => $cityId]);

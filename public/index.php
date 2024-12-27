@@ -1,44 +1,42 @@
-<?php
+<?php    
     require_once __DIR__ . '/../app/Config/config.php';
 
-    // Require core files
-    require_once __DIR__ . '/../app/Core/Router.php';
-    require_once __DIR__ . '/../app/Core/Request.php';
-    require_once __DIR__ . '/../app/Core/BasePage.php';
-    require_once __DIR__ . '/../app/Core/BaseClass.php';
-    require_once __DIR__ . '/../app/Core/Database.php';
-    require_once __DIR__ . '/../app/helpers/url_helper.php';
-    require_once __DIR__ . '/../app/helpers/session_helper.php';
-    require_once __DIR__ . '/../app/helpers/custom_functions.php';
-    require_once __DIR__ . '/../app/helpers/csrf_helper.php';
-    require_once __DIR__ . '/../app/helpers/user_helper.php';
+    function require_all_files($directory) {
+        foreach (glob($directory . '/*.php') as $filename) {
+            require_once $filename;
+        }
+    }
 
+    // Require all core files
+    require_all_files(__DIR__ . '/../app/Core');
     $db = new Database();
     BaseClass::setDatabase($db);
 
-    // Require the classes
-    require_once __DIR__ . '/../app/Classes/User.php';
-    require_once __DIR__ . '/../app/Classes/Country.php';
-    require_once __DIR__ . '/../app/Classes/City.php';
-    require_once __DIR__ . '/../app/Classes/Language.php';
-    require_once __DIR__ . '/../app/Classes/Continent.php';
+    // Require all helpers files
+    require_all_files(__DIR__ . '/../app/Helpers');
+
+    // Require all the classes
+    require_all_files(__DIR__ . '/../app/Classes');
     
+
+    // Define the routes
     $router = new Router();
     $request = new Request();
 
-    // countries routes 
+    // Country routes 
     $router->add('GET', '/', 'CountriesPage@index');
     $router->add('GET', '/country/create', 'NewCountryPage@index');
     $router->add('POST', '/country/create', 'NewCountryPage@create');
+    $router->add('POST', '/country/delete/{id}', 'CountryDetailsPage@delete');
     $router->add('GET', '/country/{id}', 'CountryDetailsPage@index');
     $router->add('POST', '/country/{id}', 'CountryDetailsPage@update');
-    $router->add('POST', '/delete-country/{id}', 'CountryDetailsPage@delete');
-    $router->add('GET', '/country/create', 'NewCountryPage@index');
 
+    // API routes
     $router->add('POST', '/api/country/add-city', 'CountryDetailsPage@addCityToCountry');
     $router->add('POST', '/api/country/remove-city', 'CountryDetailsPage@removeCityFromCountry');
     $router->add('GET', '/api/country/cities/{id}', 'NewCountryPage@countryCities');
 
+    // Auth routes
     $router->add('GET', '/signup', 'SignupPage@index');
     $router->add('POST', '/signup', 'SignupPage@register');
     $router->add('GET', '/login', 'LoginPage@index');
