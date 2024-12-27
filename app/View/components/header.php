@@ -21,4 +21,14 @@
         <?php
             }
         ?>
+        <?php
+            if (isLoggedIn()) {
+        ?>
+            <form action="<?= URLROOT . 'logout' ?>" method="POST">
+                <input type="hidden" name="csrf_token" value="<?= generateCsrfToken() ?>">
+                <button class="bg-red-500 px-2 py-1 rounded-lg text-white">Logout <i class="fa-solid fa-right-from-bracket"></i></button>
+            </form>
+        <?php
+            }
+        ?>
     </header>

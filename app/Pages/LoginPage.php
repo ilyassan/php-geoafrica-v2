@@ -44,7 +44,7 @@ class LoginPage extends BasePage
         // Make sure errors are empty (There's no errors)
         if( empty($errors['email_err']) && empty($errors['password_err']) ){
 
-            $user  = User::findUserByEmail($data['email']);
+            $user = User::findUserByEmail($data['email']);
             
             $pwdIsValid = password_verify($data["password"],$user->getPassword());
             
@@ -61,6 +61,10 @@ class LoginPage extends BasePage
             flash("error", array_first_not_null_value($errors));
             redirect('login');
         }
+    }
 
+    public function logout(){
+        user()->destroySession();
+        redirect("login");
     }
 }

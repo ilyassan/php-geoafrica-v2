@@ -42,5 +42,6 @@
     $router->add('POST', '/signup', 'SignupPage@register');
     $router->add('GET', '/login', 'LoginPage@index');
     $router->add('POST', '/login', 'LoginPage@login');
+    $router->add('POST', '/logout', 'LoginPage@logout');
 
     $router->dispatch($request);
