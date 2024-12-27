@@ -100,6 +100,12 @@
             filterCitiesOptions(unShowedCities);
             searchLanguage();
 
+            if (showedCities.length == 0) {
+                citiesCardsContainer.insertAdjacentHTML("beforebegin", "<div id='no-cities-alert' class='text-center w-fit mx-auto px-5 py-2 rounded-lg bg-gray-200 text-gray-800'>No cities available</div>");
+            }else{
+                document.getElementById("no-cities-alert")?.remove();
+            }
+
             for(let city of showedCities){
                 citiesTagsContainer.innerHTML += `
                     <div style='border-top-left-radius: .3rem; border-bottom-left-radius: .3rem;' class='flex items-center gap-3 relative text-white bg-primary px-2'>
@@ -115,7 +121,6 @@
                     removeCity(cityId);
                 }
             })
-
 
             for( let city of showedCities){
                 citiesCardsContainer.innerHTML += `
@@ -221,16 +226,16 @@
             showedCities.push(city);
             showData();
 
-            const res = await fetch("<?= URLROOT . 'api/country/add-city'?>", {
+            await fetch("<?= URLROOT . 'api/country/add-city'?>", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
                         },
-                        body: JSON.stringify({ id: cityId })
+                        body: JSON.stringify({
+                            id: cityId,
+                            csrf_token: "<?= generateCsrfToken()?>"
+                        })
                     });
-
-            const data = await res.json();
-            console.log(data);
         }
 
         async function removeCity(id){
@@ -245,7 +250,11 @@
                         headers: {
                             "Content-Type": "application/json"
                         },
-                        body: JSON.stringify({ id })
+                        body: JSON.stringify(
+                            {
+                                id,
+                                csrf_token: "<?= generateCsrfToken()?>"
+                            })
                     });
         }
 
