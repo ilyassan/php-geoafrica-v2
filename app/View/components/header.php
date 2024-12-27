@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    <div id="loading" class="fixed bg-white flex justify-center items-center opacity-100 transition-all duration-500 left-0 top-0 w-full h-full z-50 text-5xl">
+        <i class="fa-solid fa-spinner text-primary animate-spin"></i>
+    </div>
 
     <header class="flex justify-between container py-5">
         <a class="text-primary font-bold text-2xl" href="<?= URLROOT ?>">GEOAFRICA</a>
