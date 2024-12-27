@@ -9,11 +9,11 @@
     private $image_url;
     private $x;
     private $y;
-    private $isShowed;
+    private $is_showed;
     private $language;
     private $language_id;
 
-    public function __construct($id, $name, $population, $language, $language_id, $shortname, $description, $image_url, $x, $y, $isShowed)
+    public function __construct($id, $name, $population, $language, $language_id, $shortname, $description, $image_url, $x, $y, $is_showed)
     {
         $this->id = $id;
         $this->name = $name;
@@ -25,7 +25,7 @@
         $this->image_url = $image_url;
         $this->x = $x;
         $this->y = $y;
-        $this->isShowed = $isShowed;
+        $this->is_showed = $is_showed;
     }
 
     public function getId()
@@ -74,8 +74,8 @@
             return $this->language_id;
         }
 
-        public function isShowed() {
-            return $this->isShowed;
+        public function getIsShowed() {
+            return $this->is_showed;
         }
 
         public function setPopulation($population) {
@@ -92,19 +92,14 @@
 
         public function update() {
             $sql = "UPDATE countries
-                    SET name = :name, population = :population, id_language = :id_language, shortname = :shortname, description = :description, image_url = :image_url, x = :x, y = :y, is_showed = :is_showed
+                    SET population = :population, id_language = :id_language, is_showed = :is_showed
                     WHERE id = :id";
+
             self::$db->query($sql);
-            self::$db->bind(':name', $this->name);
+            self::$db->bind(':id', $this->id);
             self::$db->bind(':population', $this->population);
             self::$db->bind(':id_language', $this->language_id);
-            self::$db->bind(':shortname', $this->shortname);
-            self::$db->bind(':description', $this->description);
-            self::$db->bind(':image_url', $this->image_url);
-            self::$db->bind(':x', $this->x);
-            self::$db->bind(':y', $this->y);
-            self::$db->bind(':is_showed', $this->isShowed);
-            self::$db->bind(':id', $this->id);
+            self::$db->bind(':is_showed', $this->is_showed);
             return self::$db->execute();
         }
 
